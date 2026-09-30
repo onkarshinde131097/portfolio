@@ -52,7 +52,7 @@
             e.preventDefault();
             
             // Check for spam (honeypot)
-            if (form.honeypot && form.honeypot.value) {
+            if ((form.honeypot && form.honeypot.value) || (form['bot-field'] && form['bot-field'].value)) {
                 console.log('Spam detected');
                 return false;
             }
@@ -82,38 +82,53 @@
                 submission_time: new Date().toLocaleString()
             };
             
-            // Try EmailJS first, then fallback
-            if (emailjsReady && typeof emailjs !== 'undefined') {
-                console.log('📧 Attempting to send email via EmailJS...');
-                
-                emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams)
-                    .then(function(response) {
-                        console.log('✅ EmailJS SUCCESS!', response.status, response.text);
-                        console.log('📧 Email sent to: onkar131097@gmail.com');
-                        console.log('👤 From:', templateParams.from_name, '(' + templateParams.from_email + ')');
-                        showSuccess();
-                        
-                        // Optional: Analytics tracking
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'contact_form_submit', {
-                                'event_category': 'engagement',
-                                'event_label': 'emailjs_success'
-                            });
-                        }
-                    })
-                    .catch(function(error) {
-                        console.error('❌ EmailJS FAILED:', error);
-                        console.log('🔄 Trying fallback method...');
-                        handleFallback(templateParams);
-                    })
-                    .finally(function() {
-                        resetButton();
-                    });
-            } else {
-                console.log('⚠️ EmailJS not available, using fallback method');
-                handleFallback(templateParams);
-            }
+            // EmailJS runs in the browser against api.emailjs.com. If that TLS
+            // connection fails, the Netlify-hosted site can still store the form.
+            const deliver = function () {
+                if (emailjsReady && typeof emailjs !== 'undefined') {
+                    return emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams);
+                }
+                return Promise.reject(new Error('EmailJS not configured'));
+            };
+
+            deliver()
+                .catch(function (error) {
+                    console.error('EmailJS failed:', error);
+                    return sendViaNetlify(templateParams);
+                })
+                .then(function () {
+                    showSuccess();
+                })
+                .catch(function () {
+                    handleFallback(templateParams);
+                })
+                .finally(function () {
+                    resetButton();
+                });
         });
+
+        function sendViaNetlify(templateParams) {
+            const host = window.location.hostname;
+            const hosted = window.location.protocol === 'https:' && host && host !== 'localhost' && host !== '127.0.0.1';
+            if (!hosted) {
+                return Promise.reject(new Error('Not a hosted site'));
+            }
+            const body = new URLSearchParams();
+            body.set('form-name', 'contact');
+            body.set('name', templateParams.from_name);
+            body.set('email', templateParams.from_email);
+            body.set('phone', templateParams.phone);
+            body.set('message', templateParams.message);
+            return fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: body.toString()
+            }).then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Netlify form failed');
+                }
+            });
+        }
         
         // Fallback method when EmailJS fails or isn't configured
         function handleFallback(templateParams) {

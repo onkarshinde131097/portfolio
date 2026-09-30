@@ -378,7 +378,9 @@
             <a href="https://gitlab.com/Onkar_131097" target="_blank" rel="noreferrer" data-cursor="Code">GitLab <span>Onkar_131097</span></a>
           </div>
         </div>
-        <form id="contactForm" novalidate>
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <input class="honeypot" type="text" name="bot-field" tabindex="-1" autocomplete="off" />
           <label>Full name
             <input id="name" name="name" type="text" autocomplete="name" required />
           </label>

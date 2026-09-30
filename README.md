@@ -13,7 +13,7 @@ Open `index.html` in a browser. No build step and no server are required.
 | Behavior | JavaScript, no framework |
 | Type | Static site |
 | Typefaces | Fraunces and Outfit, loaded from Google Fonts |
-| Contact delivery | EmailJS in the browser, with a mailto fallback |
+| Contact delivery | EmailJS in the browser. If that connection fails, the Netlify site stores the form. Mailto is the last fallback. |
 | Resume | PDF in `assets/` |
 
 The navbar, portrait, project cards, and skill chips respond to the pointer. `prefers-reduced-motion` turns that motion off.
