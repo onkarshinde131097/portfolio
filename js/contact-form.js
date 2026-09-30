@@ -50,13 +50,7 @@
         // Form submission handler
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Check for spam (honeypot)
-            if ((form.honeypot && form.honeypot.value) || (form['bot-field'] && form['bot-field'].value)) {
-                console.log('Spam detected');
-                return false;
-            }
-            
+
             // Validate form first
             if (!validateForm()) {
                 return false;
@@ -82,9 +76,12 @@
                 submission_time: new Date().toLocaleString()
             };
             
-            // EmailJS runs in the browser against api.emailjs.com. If that TLS
-            // connection fails, the Netlify-hosted site can still store the form.
+            // On the live site, store the form with Netlify. EmailJS is a
+            // second attempt because some networks cannot reach api.emailjs.com.
             const deliver = function () {
+                if (isHostedSite()) {
+                    return sendViaNetlify(templateParams);
+                }
                 if (emailjsReady && typeof emailjs !== 'undefined') {
                     return emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams);
                 }
@@ -93,8 +90,11 @@
 
             deliver()
                 .catch(function (error) {
-                    console.error('EmailJS failed:', error);
-                    return sendViaNetlify(templateParams);
+                    console.error('Primary send failed:', error);
+                    if (isHostedSite() && emailjsReady && typeof emailjs !== 'undefined') {
+                        return emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, templateParams);
+                    }
+                    return Promise.reject(error);
                 })
                 .then(function () {
                     showSuccess();
@@ -107,10 +107,13 @@
                 });
         });
 
-        function sendViaNetlify(templateParams) {
+        function isHostedSite() {
             const host = window.location.hostname;
-            const hosted = window.location.protocol === 'https:' && host && host !== 'localhost' && host !== '127.0.0.1';
-            if (!hosted) {
+            return window.location.protocol === 'https:' && host && host !== 'localhost' && host !== '127.0.0.1';
+        }
+
+        function sendViaNetlify(templateParams) {
+            if (!isHostedSite()) {
                 return Promise.reject(new Error('Not a hosted site'));
             }
             const body = new URLSearchParams();
