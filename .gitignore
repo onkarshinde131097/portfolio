@@ -1,0 +1,22 @@
+# Local EmailJS credentials. Copy js/emailjs.config.example.js to js/emailjs.config.js.
+js/emailjs.config.js
+
+# Earlier EC2 deploy notes and scripts. They are not part of the static site.
+deploy/
+EMAILJS_SETUP.md
+
+# Unused Start Bootstrap theme left from the first draft.
+css/styles.css
+js/scripts.js
+js/contact-form-local.js
+js/contact-form-working.js
+
+# Keys and local environment
+*.pem
+.env
+.env.*
+
+# OS noise
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,26 @@
+:root {
+  --bg: #08090e;
+  --ink: #f6f3ec;
+  --muted: #a8b0be;
+  --sans: "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+.wrap { width: min(720px, calc(100% - 40px)); margin: 48px auto; }
+
+.nav { padding: 20px 24px; }
+
+.brand { color: inherit; text-decoration: none; font-weight: 650; }
+
+h1 { font-size: 48px; line-height: 1; margin: 0 0 12px; }
+
+p { color: var(--muted); }
