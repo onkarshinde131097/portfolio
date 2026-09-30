@@ -3,16 +3,411 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Onkar Shinde</title>
-  <link rel="stylesheet" href="css/portfolio.css" />
+  <meta name="description" content="Onkar Dinkar Shinde — software developer building telecom OSS microservices, TMF-622 order orchestration, and TSF fulfillment adapters at Amdocs." />
+  <meta name="author" content="Onkar Dinkar Shinde" />
+  <title>Onkar Shinde — Backend Engineer</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="css/portfolio.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="index.html">Onkar Shinde</a>
-  </header>
-  <main class="wrap">
-    <h1>Onkar Dinkar Shinde</h1>
-    <p>Software developer. Telecom OSS, Java, and event-driven services.</p>
-  </main>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"><span class="cursor-label"></span></div>
+  </div>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html" data-cursor="Home">
+        <span class="mark">OS</span>
+        <span><small>Pune · Amdocs</small><strong>Onkar Shinde</strong></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav class="nav-links" id="nav-links">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="#about" data-nav>About</a>
+        <a href="#work" data-nav>Work</a>
+        <a href="#expertise" data-nav>Expertise</a>
+        <a href="#experience" data-nav>Experience</a>
+        <a href="#contact" data-nav>Contact</a>
+        <a class="btn btn-gold nav-cv" href="assets/Onkar_Shinde_Resume_2026.pdf" download data-magnetic data-cursor="CV">Resume</a>
+      </nav>
+    </header>
+
+    <section class="hero" data-hero>
+      <canvas id="signal" class="hero-canvas" aria-hidden="true"></canvas>
+      <div>
+        <p class="eyebrow">Software Developer · Java · Kafka · Kubernetes</p>
+        <h1>I ship the services behind the order.</h1>
+        <p class="lede">Backend engineer with 4+ years at Amdocs on Telstra platforms. I build event-driven microservices for TMF-622 product ordering and the TSF Mobile B2B fulfillment chain — then stay with the migrations, cutovers, and live support that keep them in production.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#work" data-magnetic data-cursor="Work">Selected work</a>
+          <a class="btn btn-ghost" href="#contact" data-magnetic data-cursor="Hello">Talk to me</a>
+        </div>
+        <div class="meta-row">
+          <span class="pill">Pune, India</span>
+          <span class="pill">Telecom OSS</span>
+          <span class="pill">Open to backend roles</span>
+        </div>
+      </div>
+      <div class="portrait-wrap" data-depth="18">
+        <div class="portrait" data-tilt data-cursor="Onkar">
+          <img src="assets/formal-cutout.png" alt="Portrait of Onkar Dinkar Shinde" />
+        </div>
+        <p class="portrait-caption">Onkar · Pune</p>
+        <div class="portrait-stats">
+          <div class="float-card">
+            <b>50K+</b>
+            <span>daily orders on TMF-622</span>
+          </div>
+          <div class="float-card">
+            <b>TSF</b>
+            <span>Mobile B2B fulfillment chain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Proof points">
+      <div class="metric"><b data-count>8+</b><span>order microservices</span></div>
+      <div class="metric"><b>20%</b><span>lower fulfillment latency</span></div>
+      <div class="metric"><b>30%</b><span>less manual logistics coordination</span></div>
+      <div class="metric"><b>15+</b><span>APIs secured, zero-downtime cutover</span></div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <figure class="about-photo" data-tilt data-cursor="About">
+          <img src="assets/office_white_shirt_image.png" alt="Onkar Shinde in the Amdocs office, white shirt, arms crossed, with the Amdocs wall behind him" />
+          <figcaption>Amdocs office · Pune</figcaption>
+        </figure>
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>The person on the order path.</h2>
+          <p>I’m Onkar Dinkar Shinde, a software developer at Amdocs DVC in Pune. Since May 2022 I’ve worked Telstra telecom platforms: product orders, logistics, catalogue and inventory, and the gateways those orders pass through.</p>
+          <p>The work is event-driven Java. A product order arrives, Kafka carries it, Spring Boot services decide the next step, and Kubernetes keeps the set running. When the path is slow or the platform has to move — Simplex to Complex, OKAPI to Entra, AWS to Azure — I stay through the cutover, not only the first design.</p>
+          <p>In the first year I was sent to Melbourne for a client visit, product review, and production live support, and named Best Employee the same year. In 2025 the TMF-622, Fixed Site Connectivity, and Adaptive Collab delivery was called out at an Amdocs townhall.</p>
+          <p>I use Cursor and GitHub Copilot on the real path: writing services, reviewing changes, and tracing production defects. The HackerEarth Novice badge is the practice habit beside that — Java and problem-solving, one level at a time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Recent work</p>
+          <h2>Systems recruiters can trace.</h2>
+        </div>
+        <p>Production delivery for Telstra at Amdocs. Move across a case and the path nearest your cursor lights up.</p>
+      </div>
+
+      <article class="case" data-tilt data-cursor="TSF">
+        <div>
+          <p class="section-kicker">Featured · TSF</p>
+          <h3>TSF Mobile B2B</h3>
+          <p>Mobile B2B activity has to become a fulfillment request, and the result has to land back on the order. I worked the request path of that chain.</p>
+          <ul class="clarify">
+            <li><strong>What it is.</strong> A Kafka-backed fulfillment flow. An activity event is mapped and validated into one shared envelope, handed off asynchronously so the outside work sits off the order path, then the outcome is written back to service order management.</li>
+            <li><strong>What I did.</strong> The request side: take the activity, shape the envelope, and publish it on. Adapters share one library, so a new event extends the chain instead of starting a new design. A bad payload is held aside so it does not stall the rest.</li>
+            <li><strong>Stack.</strong> Java, Apache Camel K, Spring Boot, Kafka, Kubernetes.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Apache Camel K</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Kubernetes</span>
+          </div>
+        </div>
+        <div class="flow" data-flow>
+          <div class="node" data-node><em>01</em><strong>Activity</strong><span>Mobile B2B enters</span></div>
+          <div class="node" data-node><em>02</em><strong>Request</strong><span>Map and validate</span></div>
+          <div class="node" data-node><em>03</em><strong>Handoff</strong><span>Async, off the order path</span></div>
+          <div class="node" data-node><em>04</em><strong>Response</strong><span>Written back to orders</span></div>
+          <div class="node" data-node><em>05</em><strong>Failure lane</strong><span>Bad payloads held aside</span></div>
+        </div>
+      </article>
+
+      <article class="case" data-tilt data-cursor="TMF">
+        <div>
+          <p class="section-kicker">Featured · TMF-622</p>
+          <h3>Product order orchestration</h3>
+          <p>TMF-622 is the TM Forum product-order standard. These services take an order for a telecom product and carry it through fulfillment.</p>
+          <ul class="clarify">
+            <li><strong>What it is.</strong> Eight or more event-driven microservices for NBN, Fiber, and Digital SIM. The live flow carries 50K+ orders a day.</li>
+            <li><strong>What I did.</strong> Built those services, then tuned Kafka consumers and PostgreSQL queries. Under 3K+ concurrent SVT transactions, fulfillment latency dropped about 20%.</li>
+            <li><strong>Stack.</strong> Java, Spring Boot, Kafka, PostgreSQL, TMF-622.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">TMF-622</span>
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="flow" data-flow>
+          <div class="node" data-node><em>01</em><strong>Order</strong><span>NBN, Fiber, SIM</span></div>
+          <div class="node" data-node><em>02</em><strong>Services</strong><span>8+ own the lifecycle</span></div>
+          <div class="node" data-node><em>03</em><strong>Kafka</strong><span>Tuned under SVT</span></div>
+          <div class="node" data-node><em>04</em><strong>PostgreSQL</strong><span>Latency down ~20%</span></div>
+          <div class="node" data-node><em>05</em><strong>Fulfillment</strong><span>50K+ orders a day</span></div>
+        </div>
+      </article>
+
+      <div class="project-list">
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Migration</p>
+            <h3>Complex Logistics</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> The logistics layer on a telecom order: how the physical and logical work of fulfillment is coordinated. Simplex was the earlier model. Complex is the model the platform moved to.</p>
+            <p><strong>What I did.</strong> Led the Simplex → Complex migration and built the Complex Logistics workflows from development through production. Camel K integrations sit on these orchestration and logistics flows.</p>
+            <p class="stat">About 30% less manual coordination across connected environments · Java, Spring Boot, Kafka, Kubernetes, Camel K</p>
+          </div>
+        </article>
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Product data</p>
+            <h3>Catalogue &amp; inventory</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> Master Catalogue is the definition of what can be sold. Service Inventory is what is already in place for a customer. Orders are wrong if either one is out of date.</p>
+            <p><strong>What I did.</strong> Migrated Service Inventory and Master Catalogue across lines of business, for both B2B and B2C products.</p>
+            <p class="stat">Multi-LOB move · B2B and B2C</p>
+          </div>
+        </article>
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Test platform</p>
+            <h3>Fixed Site Connectivity</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> Telstra Fixed Site Connectivity, including Internet Direct, needs order integration proven before it hits the full live path.</p>
+            <p><strong>What I did.</strong> Built an Order Manager Simulator and an EventHub so those integration scenarios can be played and watched, instead of depending on the full live path for every test.</p>
+            <p class="stat">About 40% shorter integration test cycles</p>
+          </div>
+        </article>
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Platform</p>
+            <h3>Gateway &amp; identity</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> The front door for production APIs, moved across three generations: OKAPI, then OGW, then Azure Entra ID.</p>
+            <p><strong>What I did.</strong> Ran that path as a zero-downtime cutover. Fifteen or more production APIs now sit under one gateway, with access controlled by RBAC.</p>
+            <p class="stat">APIs stayed up through the cutover · APIGEE, Azure Entra ID, RBAC</p>
+          </div>
+        </article>
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Cloud</p>
+            <h3>AWS → Azure</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> A platform move in the same Telstra delivery, off AWS and onto Azure.</p>
+            <p><strong>What I did.</strong> Took part in migrating workloads and platform components from AWS to Azure, alongside the order and gateway work.</p>
+            <p class="stat">Docker, Kubernetes, Jenkins on the same delivery</p>
+          </div>
+        </article>
+        <article class="project" data-tilt data-cursor="View">
+          <div>
+            <p class="section-kicker">Quality</p>
+            <h3>ITAF + AI tests</h3>
+          </div>
+          <div>
+            <p><strong>What it is.</strong> ITAF is an in-house regression framework built on Tricentis Tosca, aimed at the same telecom applications the services ship.</p>
+            <p><strong>What I did.</strong> Built the framework and added AI-assisted test-case generation, so regression cases take less authoring. I also use Cursor and GitHub Copilot while developing, reviewing, and tracing production defects.</p>
+            <p class="stat">About 25% less regression authoring effort · Tosca AS1, June 2024</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Expertise</p>
+          <h2>The stack I actually run.</h2>
+        </div>
+        <p>Pass the cursor through the field. The chips nearest it step aside.</p>
+      </div>
+      <div class="field" data-field>
+        <span class="chip" data-chip>Java</span>
+        <span class="chip" data-chip>Spring Boot</span>
+        <span class="chip" data-chip>Apache Camel K</span>
+        <span class="chip" data-chip>Microservices</span>
+        <span class="chip" data-chip>REST APIs</span>
+        <span class="chip" data-chip>Event-driven</span>
+        <span class="chip" data-chip>TMF-622</span>
+        <span class="chip" data-chip>Kafka</span>
+        <span class="chip" data-chip>PostgreSQL</span>
+        <span class="chip" data-chip>MySQL</span>
+        <span class="chip" data-chip>Docker</span>
+        <span class="chip" data-chip>Kubernetes</span>
+        <span class="chip" data-chip>Jenkins</span>
+        <span class="chip" data-chip>AWS</span>
+        <span class="chip" data-chip>Azure</span>
+        <span class="chip" data-chip>Azure Entra ID</span>
+        <span class="chip" data-chip>APIGEE</span>
+        <span class="chip" data-chip>RBAC</span>
+        <span class="chip" data-chip>Splunk</span>
+        <span class="chip" data-chip>ELK</span>
+        <span class="chip" data-chip>New Relic</span>
+        <span class="chip" data-chip>Tricentis Tosca</span>
+        <span class="chip" data-chip>OpenAPI</span>
+        <span class="chip" data-chip>Python</span>
+        <span class="chip" data-chip>Shell</span>
+        <span class="chip" data-chip>JavaScript</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Experience</p>
+          <h2>Amdocs, since May 2022.</h2>
+        </div>
+        <p>Software Developer, Amdocs DVC India, Pune. Telstra order, logistics, catalogue, and platform work.</p>
+      </div>
+      <div class="timeline">
+        <article class="job">
+          <div>
+            <div class="when">May 2022 — Present</div>
+            <h3>Amdocs</h3>
+            <p class="role">Software Developer · Pune</p>
+            <a class="btn btn-ghost" href="assets/Onkar_Shinde_Resume_2026.pdf" download data-cursor="CV">Download CV</a>
+          </div>
+          <ul>
+            <li>Built 8+ event-driven microservices for TMF-622 order orchestration across NBN, Fiber, and Digital SIM.</li>
+            <li>Worked the TSF Mobile B2B path — request adapters and the Kafka handoff into fulfillment, through to the response written back to order management.</li>
+            <li>Tuned Kafka consumers and PostgreSQL, reducing fulfillment latency about 20% under 3K+ concurrent SVT transactions.</li>
+            <li>Led Simplex → Complex Logistics and cut manual coordination about 30% from development through production.</li>
+            <li>Migrated Service Inventory and Master Catalogue across B2B and B2C lines of business.</li>
+            <li>Ran OKAPI → OGW → Azure Entra with a zero-downtime cutover, securing 15+ production APIs, and took part in AWS → Azure.</li>
+            <li>Shipped Order Manager Simulator and EventHub for Fixed Site Connectivity, shortening integration test cycles about 40%.</li>
+            <li>Built ITAF on Tricentis Tosca with AI-assisted test generation, cutting regression authoring about 25%.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="recognition">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Trust</p>
+          <h2>Asked in early. Named later.</h2>
+        </div>
+      </div>
+      <a class="he-badge" href="https://www.hackerearth.com/@onkar131097?badge_category=he_level&badge_type=global&badge_level=1" target="_blank" rel="noreferrer" data-cursor="Badge" data-tilt>
+        <svg viewBox="0 0 64 72" width="64" height="72" aria-hidden="true">
+          <path d="M32 2 L60 13 V34 C60 52 47 64 32 70 C17 64 4 52 4 34 V13 Z" fill="#f5a623"/>
+          <path d="M32 8 L54 16.5 V33.5 C54 47.5 44 57 32 62 C20 57 10 47.5 10 33.5 V16.5 Z" fill="#ffb703"/>
+          <path d="M24 44 h16 l-3.2 7 h-9.6 z" fill="#f6e27a"/>
+        </svg>
+        <div>
+          <p class="section-kicker">HackerEarth · Global level</p>
+          <h3>Novice badge</h3>
+          <p>Level 1 of 7 · 40 points · unlocked 21 Sep 2026. Same update is on LinkedIn.</p>
+        </div>
+      </a>
+      <div class="recog">
+        <article>
+          <h3>Melbourne</h3>
+          <p>Selected in the first year for an onsite client visit in Melbourne, VIC — product review and production live support.</p>
+        </article>
+        <article>
+          <h3>Best Employee</h3>
+          <p>Recognized the same year as the Melbourne visit, for delivery that other teams could depend on.</p>
+        </article>
+        <article>
+          <h3>Townhall 2025</h3>
+          <p>Acknowledged at Amdocs Townhall 2025 for TMF-622, Fixed Site Connectivity, and Adaptive Collab.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="split">
+        <div class="panel">
+          <h3>Education</h3>
+          <div class="edu-item">
+            <h4>PGDAC · Advanced Computing</h4>
+            <p>Sunbeam Institute of Technology, Pune · 2021–2022 · 67%</p>
+          </div>
+          <div class="edu-item">
+            <h4>B.E. Mechanical Engineering</h4>
+            <p>Annasaheb Dange College of Engineering and Technology, Ashta, Sangli · 2016–2019 · 66%</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Certifications</h3>
+          <div class="edu-item">
+            <h4>AWS Cloud Practitioner</h4>
+            <p>May 2023</p>
+          </div>
+          <div class="edu-item">
+            <h4>Tricentis Tosca Fundamentals (AS1)</h4>
+            <p>Automating web application testing · June 2024</p>
+          </div>
+          <div class="edu-item">
+            <h4>HackerEarth Novice</h4>
+            <p>Global level · 1 of 7 · 40 points · 21 Sep 2026 · <a href="https://www.hackerearth.com/@onkar131097?badge_category=he_level&badge_type=global&badge_level=1" target="_blank" rel="noreferrer">View badge</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-grid">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>If the role is backend, write.</h2>
+          <p class="lede">Java, Spring Boot, Kafka, and telecom order systems. Pune first; open to other large-company locations.</p>
+          <div class="contact-list">
+            <a href="mailto:onkar131097@gmail.com" data-cursor="Mail">onkar131097@gmail.com <span>Email</span></a>
+            <a href="tel:+919579493957" data-cursor="Call">+91 95794 93957 <span>Phone</span></a>
+            <a href="https://www.linkedin.com/in/onkar-shinde-21a41a1ab/" target="_blank" rel="noreferrer" data-cursor="In">LinkedIn <span>Profile</span></a>
+            <a href="https://github.com/onkarshinde131097" target="_blank" rel="noreferrer" data-cursor="Git">GitHub <span>onkarshinde131097</span></a>
+            <a href="https://gitlab.com/Onkar_131097" target="_blank" rel="noreferrer" data-cursor="Code">GitLab <span>Onkar_131097</span></a>
+          </div>
+        </div>
+        <form id="contactForm" novalidate>
+          <label>Full name
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>Email
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>Phone
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </label>
+          <label>Message
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </label>
+          <input class="honeypot" type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+          <div class="form-note d-none" id="submitSuccessMessage">Message sent. I’ll reply from onkar131097@gmail.com.</div>
+          <div class="form-note error d-none" id="submitErrorMessage">Something failed. Email onkar131097@gmail.com directly.</div>
+          <button class="btn btn-gold" id="submitButton" type="submit" data-magnetic data-cursor="Send">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Onkar Dinkar Shinde</span>
+      <span>Backend · Telecom OSS · Pune</span>
+    </footer>
+  </div>
+
+  <script src="js/motion.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/emailjs.config.js"></script>
+  <script src="js/contact-form.js"></script>
 </body>
 </html>
